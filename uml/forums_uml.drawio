@@ -1,0 +1,64 @@
+<mxfile host="app.diagrams.net" modified="2025-10-23T00:00:00.000Z" agent="Mozilla/5.0" version="24.7.5">
+  <diagram id="forumsUML" name="forums_uml">
+    <mxGraphModel dx="1220" dy="720" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Classes -->
+        <mxCell id="User" value="<b>User</b>" style="shape=rectangle;whiteSpace=wrap;rounded=1;horizontal=1;verticalAlign=top;spacingTop=8;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="120" y="120" width="170" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="Forum" value="<b>Forum</b>" style="shape=rectangle;whiteSpace=wrap;rounded=1;horizontal=1;verticalAlign=top;spacingTop=8;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="430" y="120" width="180" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="Membership" value="<b>Membership</b>" style="shape=rectangle;whiteSpace=wrap;rounded=1;horizontal=1;verticalAlign=top;spacingTop=8;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="280" y="260" width="180" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="Thread" value="<b>Thread</b>" style="shape=rectangle;whiteSpace=wrap;rounded=1;horizontal=1;verticalAlign=top;spacingTop=8;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="720" y="260" width="170" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="Message" value="<b>Message</b>" style="shape=rectangle;whiteSpace=wrap;rounded=1;horizontal=1;verticalAlign=top;spacingTop=8;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="960" y="420" width="170" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="Invitation" value="<b>Invitation</b>" style="shape=rectangle;whiteSpace=wrap;rounded=1;horizontal=1;verticalAlign=top;spacingTop=8;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="430" y="420" width="180" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- Associations already done -->
+
+        <!-- User — Membership (User 1 .. * Membership) -->
+        <mxCell id="User-Membership" edge="1" parent="1" value="1 .. *">
+          <mxGeometry relative="1" as="geometry"/>
+          <mxCell source="User" target="Membership" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;"/>
+        </mxCell>
+
+        <!-- Forum ⬩— Membership (composition; Forum 1 .. * Membership) -->
+        <mxCell id="Forum-Membership" edge="1" parent="1" value="1 .. *">
+          <mxGeometry relative="1" as="geometry"/>
+          <mxCell source="Forum" target="Membership" style="edgeStyle=orthogonalEdgeStyle;endArrow=diamond;endFill=1;"/>
+        </mxCell>
+
+        <!-- Forum ⬩— Thread (composition; Forum 1 .. * Thread) -->
+        <mxCell id="Forum-Thread" edge="1" parent="1" value="1 .. *">
+          <mxGeometry relative="1" as="geometry"/>
+          <mxCell source="Forum" target="Thread" style="edgeStyle=orthogonalEdgeStyle;endArrow=diamond;endFill=1;"/>
+        </mxCell>
+
+        <!-- Thread ⬩— Message (composition; Thread 1 .. * Message) -->
+        <mxCell id="Thread-Message" edge="1" parent="1" value="1 .. *">
+          <mxGeometry relative="1" as="geometry"/>
+          <mxCell source="Thread" target="Message" style="edgeStyle=orthogonalEdgeStyle;endArrow=diamond;endFill=1;"/>
+        </mxCell>
+
+        <!-- (still needs user message author, forum invitation, invitation user, forum owner, forum moderator) -->
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
